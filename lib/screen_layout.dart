@@ -35,8 +35,8 @@ class _ScreenLayoutState extends State<ScreenLayout> {
           child: Scaffold(
             body: PageView(
               controller: pageController,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
+              physics:const  NeverScrollableScrollPhysics(),
+              children: const [
                 HomeScreen(),
                 EarnScreen(),
                 InvestScreen(),
@@ -44,7 +44,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
               ],
             ),
             bottomNavigationBar: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   border: Border(
                       top: BorderSide(color: Colors.white, width: 1))),
               child: TabBar(

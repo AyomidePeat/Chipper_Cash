@@ -1,13 +1,13 @@
 
 
-import 'package:chipper_cash/data_bundle.dart';
-import 'package:chipper_cash/home_screen.dart';
-import 'package:chipper_cash/lock_screen.dart';
-import 'package:chipper_cash/pay_bills_screen.dart';
-import 'package:chipper_cash/profile_screen.dart';
-import 'package:chipper_cash/request_screen.dart';
-import 'package:chipper_cash/screen_layout.dart';
-import 'package:chipper_cash/test.dart';
+// import 'package:chipper_cash/data_bundle.dart';
+// import 'package:chipper_cash/home_screen.dart';
+// import 'package:chipper_cash/lock_screen.dart';
+// import 'package:chipper_cash/pay_bills_screen.dart';
+// import 'package:chipper_cash/profile_screen.dart';
+// import 'package:chipper_cash/request_screen.dart';
+// import 'package:chipper_cash/screen_layout.dart';
+// import 'package:chipper_cash/test.dart';
 import 'package:chipper_cash/unlock_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
       //ScreenLayout
    
    return MaterialApp(
-    debugShowCheckedModeBanner: true,
+    debugShowCheckedModeBanner: false,
     theme: ThemeData(fontFamily: 'Montserrat'),
 
-     home:LockScreen()
+     home: LockScreen()
      
    );
      

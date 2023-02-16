@@ -20,6 +20,7 @@ class _CardScreenState extends State<CardScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment:CrossAxisAlignment.start,
                 children: [
                 const  SizedBox(
                     height:50,
@@ -46,7 +47,7 @@ class _CardScreenState extends State<CardScreen> {
                       ),
                       textAlign:TextAlign.center,
                     ),SizedBox(height:15),
-                    Column(
+                    Column(crossAxisAlignment:CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
@@ -77,7 +78,7 @@ class _CardScreenState extends State<CardScreen> {
                         ),
                       ],
                     ),SizedBox(height:15),
-                    Column(
+                    Column(crossAxisAlignment:CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: const [
@@ -109,7 +110,7 @@ class _CardScreenState extends State<CardScreen> {
                         ),
                       ],
                     ),SizedBox(height:15),
-                    Column(
+                    Column( crossAxisAlignment:CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: const [
@@ -140,7 +141,7 @@ class _CardScreenState extends State<CardScreen> {
                         ),
                       ],
                     ),SizedBox(height:15),
-                    Column(
+                    Column(crossAxisAlignment:CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: const [
@@ -172,7 +173,7 @@ class _CardScreenState extends State<CardScreen> {
                         ),
                       ],
                     ),SizedBox(height:15),
-                    Column(
+                    Column(crossAxisAlignment:CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: const [
@@ -208,38 +209,42 @@ class _CardScreenState extends State<CardScreen> {
                     ),
                   ),
                  
-                  Container(
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        "Terms and Conditions",
-                        style: TextStyle(
-                          color: Colors.purple,
-                          fontWeight: FontWeight.w800,
+                  Center(
+                    child: Column(crossAxisAlignment:CrossAxisAlignment.center,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Terms and Conditions",
+                            style: TextStyle(
+                              color: Colors.purple,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
                 SizedBox(height:10),
-                     SizedBox(height:30, width:500,
-                       child: ElevatedButton( onPressed: () {},
-                        child: const Text(
-                          "Claim Your Card",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.purple,
-                          shape: RoundedRectangleBorder(
-                           
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                               ),
-                     )
+                           SizedBox(height:30, width:500,
+                             child: ElevatedButton( onPressed: () {},
+                              child: const Text(
+                                "Claim Your Card",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.purple,
+                                shape: RoundedRectangleBorder(
+                                 
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                                     ),
+                           ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),

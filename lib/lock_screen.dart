@@ -67,6 +67,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   SizedBox(
                   height: 20.0,
                 ),
+               
                   SizedBox(height:40, width:250,
                     child: ElevatedButton(
                       
