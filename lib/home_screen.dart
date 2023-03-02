@@ -19,261 +19,255 @@ class _HomeScreenState extends State<HomeScreen> {
     Container container = Container();
 
     return SafeArea(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth:1000,
-          maxHeight:400,
-        ),
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            centerTitle: false,
-            elevation: 0,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: false,
+          elevation: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Profile_Screen(),
+                      ));
+                },
+                icon: const Icon(
+                  Icons.person_outline_sharp,
+                  color: Colors.blue,
+                  // ), //label:Text("Profile", style: TextStyle(color: Colors.blue)
+                ),
+              ),
+              TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Profile_Screen(),
-                        ));
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SingleChildScrollView(child: DetailsContainer());
+                        });
                   },
-                  icon: const Icon(
-                    Icons.person_outline_sharp,
-                    color: Colors.blue,
-                    // ), //label:Text("Profile", style: TextStyle(color: Colors.blue)
-                  ),
-                ),
-                TextButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return SingleChildScrollView(child: DetailsContainer());
-                          });
-                    },
-                    child: Row(
-                      children: [
-                        const Text("My Cash",
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            )),
-                            Icon(Icons.keyboard_arrow_down_sharp, color:Colors.blue,)
-                      ],
-                    )),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.help,
-                    color: Colors.grey,
-                  ), //label:Text("Help", style: TextStyle(color: Colors.blue)
-                  //),
-                ),
-              ],
-            ),
+                  child: Row(
+                    children: [
+                      const Text("My Cash",
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          )),
+                          Icon(Icons.keyboard_arrow_down_sharp, color:Colors.blue,)
+                    ],
+                  )),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.help,
+                  color: Colors.grey,
+                ), //label:Text("Help", style: TextStyle(color: Colors.blue)
+                //),
+              ),
+            ],
           ),
-          body: Builder(
-            builder: (BuildContext context) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        // crossAxisAlignment: CrossAxisAlignment.,
-                        children: [
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => PayBillsScreen(),
-                                  ));
-                            },
-                            icon: Icon(Icons.money),
-                            label: Text("Pay Bills"),
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.pink[700],
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              padding: const EdgeInsets.all(20),
-                            ),
-                          ),
-                          SizedBox(width: 15),
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DataBundleScreen(),
-                                  ));
-                            },
-                            icon: Icon(Icons.wifi),
-                            label: Text("Data Bundle"),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 229, 190, 35),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              padding: const EdgeInsets.all(20),
-                            ),
-                          ),
-                          SizedBox(width: 15),
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => BuyAirtimeScreen(),
-                                  ));
-                            },
-                            icon: Icon(Icons.phone),
-                            label: Text("Buy Airtime"),
-                            style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 35, 143, 41),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              padding: const EdgeInsets.all(20),
-                            ),
-                          ),
-                          SizedBox(width: 15),
-                          ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AddCashScreen(),
-                                  ));
-                            },
-                            icon: Icon(Icons.attach_money),
-                            label: Text("Add Cash"),
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              padding: const EdgeInsets.all(20),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 50, width: 50),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 300,
-                    height: 200,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 5, 2, 80),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(3),
+        ),
+        body: Builder(
+          builder: (BuildContext context) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // crossAxisAlignment: CrossAxisAlignment.,
                       children: [
-                        RichText(
-                          text: const TextSpan(
-                              text: 'Protect Your Account',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text:
-                                      "\nNever share your pin,\npassword, or OTP with anyone",
-                                  style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14,
-                                  ),
-                                )
-                              ]),
-                        ),
-                        Icon(Icons.lock, color: Color.fromARGB(255, 240, 217, 8)),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                      child: SizedBox(
-                          /*height: MediaQuery.of(context).size.height*0.7)*/)),
-                  Container(
-                    padding: const EdgeInsets.only(left: 12, right: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: const Text(
-                                "Send",
-                                style: TextStyle(
-                                    color: Colors.white, fontWeight: FontWeight.bold),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.purple,
-                                elevation: 7,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                              ),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PayBillsScreen(),
+                                ));
+                          },
+                          icon: Icon(Icons.money),
+                          label: Text("Pay Bills"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.pink[700],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
                             ),
+                            padding: const EdgeInsets.all(20),
                           ),
                         ),
                         SizedBox(width: 15),
-                        Expanded(
-                          child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => RequestScreen(),
-                                    ));
-                              },
-                              child: const Text(
-                                "Request",
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DataBundleScreen(),
+                                ));
+                          },
+                          icon: Icon(Icons.wifi),
+                          label: Text("Data Bundle"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 229, 190, 35),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: const EdgeInsets.all(20),
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BuyAirtimeScreen(),
+                                ));
+                          },
+                          icon: Icon(Icons.phone),
+                          label: Text("Buy Airtime"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 35, 143, 41),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: const EdgeInsets.all(20),
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AddCashScreen(),
+                                ));
+                          },
+                          icon: Icon(Icons.attach_money),
+                          label: Text("Add Cash"),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: const EdgeInsets.all(20),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 50, width: 50),
+                Container(
+                  alignment: Alignment.center,
+                  width: 300,
+                  height: 200,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 5, 2, 80),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                  ),
+                  padding: const EdgeInsets.all(3),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      RichText(
+                        text: const TextSpan(
+                            text: 'Protect Your Account',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                            children: [
+                              TextSpan(
+                                text:
+                                    "\nNever share your pin,\npassword, or OTP with anyone",
                                 style: TextStyle(
-                                    color: Colors.black, fontWeight: FontWeight.bold),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                elevation: 7,
-                                primary: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    side: BorderSide(width: 0.5, color: Colors.grey)),
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 14,
+                                ),
+                              )
+                            ]),
+                      ),
+                      Icon(Icons.lock, color: Color.fromARGB(255, 240, 217, 8)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    child: SizedBox(
+                        /*height: MediaQuery.of(context).size.height*0.7)*/)),
+                Container(
+                  padding: const EdgeInsets.only(left: 12, right: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "Send",
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 111, 7, 208),
+                              elevation: 7,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(height: 15)
-                      ],
-                    ),
+                      ),
+                      SizedBox(width: 15),
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => RequestScreen(),
+                                  ));
+                            },
+                            child: const Text(
+                              "Request",
+                              style: TextStyle(
+                                  color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              elevation: 7,
+                              primary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                  side: BorderSide(width: 0.5, color: Colors.grey)),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15)
+                    ],
                   ),
-                ],
-              );
-            }
-          ),
+                ),
+              ],
+            );
+          }
         ),
       ),
     );
@@ -288,7 +282,7 @@ class DetailsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height * 0.85,
+        height: MediaQuery.of(context).size.height * 0.70,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -299,6 +293,7 @@ class DetailsContainer extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Center(
               child: Column(children: [
+                const SizedBox(height:15),
             const Text("Balance: #0.00",
                 style: TextStyle(
                   color: Colors.black,
@@ -337,31 +332,33 @@ class DetailsContainer extends StatelessWidget {
               SizedBox(height:5),
             const Text("Share Details",
                 style: TextStyle(
-                  color: Colors.purple,
+                  color: Color.fromARGB(255, 111, 7, 208),
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.bold,
                 )),
             SizedBox(height: 10),
             const Divider(thickness: 1.5),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AddCashScreen(),
-                    ));
-              },
-              
-                 child: Text( 'Add Cash\n',
-                  
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    fontFamily: 'Montserrat',
+            SizedBox(height:40,
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddCashScreen(),
+                      ));
+                },
+                
+                   child: Text( 'Add Cash\n',
                     
-                  ))),
-                   
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Montserrat',
+                      
+                    ))),
+            ),
+                    SizedBox(height:5),
                     Text(
                       
                           "Transfer cash from your bank into Chipper",
@@ -381,7 +378,7 @@ class DetailsContainer extends StatelessWidget {
               thickness: 0.5,
               color: Colors.grey,
             ),
-            TextButton(
+            SizedBox(height:40,child:TextButton(
               onPressed: () {},
               child:  Text(
                    'Cash Out\n',
@@ -390,8 +387,8 @@ class DetailsContainer extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                     fontFamily: 'Montserrat',
-                  ))),
-                 
+                  )))),
+                  SizedBox(height:5),
                   Text(
                      
                           "Transfer cash from your Chipper into your bank account",
@@ -407,7 +404,7 @@ class DetailsContainer extends StatelessWidget {
               thickness: 0.5,
               color: Colors.grey,
             ),
-            TextButton(
+                     SizedBox(height:40,child:   TextButton(
               onPressed: () {},
               child: Text(
                 'Check Rates\n',
@@ -416,8 +413,8 @@ class DetailsContainer extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                     fontFamily: 'Montserrat',
-                  ))),
-                 
+                  )))),
+                  SizedBox(height:5),
                       Text(
                           "See current foreign exchange rates",
                       style: TextStyle(

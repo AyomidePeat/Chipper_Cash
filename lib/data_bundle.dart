@@ -43,11 +43,11 @@ class _DataBundleScreenState extends State<DataBundleScreen> {
                           pickCountry();
                         }),
                   TextField(
-                    cursorColor: Colors.purple,
+                    cursorColor: Color.fromARGB(255, 111, 7, 208),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 111, 7, 208),
                       )),
                       hintStyle: TextStyle(fontSize: 14),
                       hintText: ' Enter Phone Number ',
@@ -55,7 +55,7 @@ class _DataBundleScreenState extends State<DataBundleScreen> {
                         borderSide: BorderSide(
                           width: 0,
                           style: BorderStyle.none,
-                          color: Colors.purple,
+                          color: Color.fromARGB(255, 111, 7, 208),
                         ),
                       ),
                       contentPadding: EdgeInsets.all(10),

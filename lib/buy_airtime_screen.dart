@@ -60,50 +60,52 @@ class _BuyAirtimeScreenState extends State<BuyAirtimeScreen> {
                    
                         Padding(
                           padding: const EdgeInsets.only(right:35),
-                          child: Row(crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(width:200),
-                              SizedBox(height:50, width:100,
-                                child: ElevatedButton( onPressed: () {},
-                                  child: const Text(
-                                    "Contacts",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                      
+                          child: Center(
+                            child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                             const SizedBox(width: 70),
+                                SizedBox(height:50, width:100,
+                                  child: ElevatedButton( onPressed: () {},
+                                    child: const Text(
+                                      "Contacts",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        
+                                      ),
                                     ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Colors.purple,
-                                    shape: RoundedRectangleBorder(
-                                     
-                                      borderRadius: BorderRadius.circular(8),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.purple,
+                                      shape: RoundedRectangleBorder(
+                                       
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
                                     ),
-                                  ),
                       ),
-                              ),
+                                ),
                        const SizedBox(width:30),
                        SizedBox(height:50, width:100,
                          child: ElevatedButton( onPressed: () {},
-                              child: const Text(
-                                "Next",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                  
+                                child: const Text(
+                                  "Next",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    
+                                  ),
                                 ),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
-                                side:BorderSide(color: Colors.grey, width: 0.9),
-                                shape: RoundedRectangleBorder(
-                              
-                                  borderRadius: BorderRadius.circular(8),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  side:BorderSide(color: Colors.grey, width: 0.9),
+                                  shape: RoundedRectangleBorder(
+                                
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
                                 ),
-                              ),
                       ),
                        )
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                      

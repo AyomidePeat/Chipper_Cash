@@ -205,7 +205,7 @@ class _InvestScreenState extends State<InvestScreen> {
                                   ),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Colors.purple,
+                                  primary: Color.fromARGB(255, 111, 7, 208),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),

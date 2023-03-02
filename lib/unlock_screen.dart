@@ -11,39 +11,33 @@ class LockScreen extends StatefulWidget {
 class _LockScreenState extends State<LockScreen> {
   final List<int> _pin = [0, 0, 0, 0];
   int _currentIndex = 0;
-  
+
   void _onNumberPressed(int number) {
     setState(() {
       _pin[_currentIndex] = number;
       _currentIndex = (_currentIndex + 1) % 4;
     });
-    
   }
 
   void delete() {
     setState(() {
-      if (_currentIndex >0){
+      if (_currentIndex > 0) {
         _currentIndex--;
-        _pin[_currentIndex] =0;
+        _pin[_currentIndex] = 0;
       }
     });
   }
 
   void _onSubmit() {
     if (_pin.join() == "1234") {
-      Navigator.push(context,MaterialPageRoute(builder:(context)=>ScreenLayout()) );
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => ScreenLayout()));
     } else {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: Text("Wrong Password"),
+          title: Text("Wrong Password \n Password: 1234"),
           content: Text("Please try again."),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text("OK"),
-            ),
-          ],
         ),
       );
       setState(() {
@@ -88,34 +82,40 @@ class _LockScreenState extends State<LockScreen> {
           SizedBox(height: 32),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: [SizedBox(width:10),
               _buildNumberButton(1),
               _buildNumberButton(2),
               _buildNumberButton(3),
+              SizedBox(width:10),
             ],
           ),
           SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              SizedBox(width:10),
               _buildNumberButton(4),
               _buildNumberButton(5),
               _buildNumberButton(6),
+              SizedBox(width:10),
             ],
           ),
           SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              SizedBox(width:10),
               _buildNumberButton(7),
               _buildNumberButton(8),
               _buildNumberButton(9),
+              SizedBox(width:10),
             ],
           ),
           SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              SizedBox(width:10),
               IconButton(
                 icon: Icon(
                   Icons.backspace,
@@ -125,6 +125,7 @@ class _LockScreenState extends State<LockScreen> {
               ),
               _buildNumberButton(0),
               _buildSubmitButton(),
+              SizedBox(width:10),
             ],
           ),
           SizedBox(
@@ -134,7 +135,7 @@ class _LockScreenState extends State<LockScreen> {
               onPressed: () {
                 const error = SnackBar(
                   content: Text('Password:1234', textAlign: TextAlign.center),
-                  backgroundColor: Color.fromARGB(255, 207, 69, 196),
+                  backgroundColor: Color.fromARGB(255, 111, 7, 208),
                   elevation: 15,
                   behavior: SnackBarBehavior.floating,
                   margin: EdgeInsets.all(5),
@@ -143,7 +144,7 @@ class _LockScreenState extends State<LockScreen> {
               },
               child: Text("Forgot PIN?",
                   style: TextStyle(
-                    color: Colors.purple,
+                    color: Color.fromARGB(255, 111, 7, 208),
                   ))),
         ],
       ),
@@ -156,34 +157,27 @@ class _LockScreenState extends State<LockScreen> {
       height: 16,
       decoration: BoxDecoration(
         color: _pin[index] == 0
-            ? Colors.purple.withOpacity(0.5)
+            ? Color.fromARGB(255, 111, 7, 208).withOpacity(0.5)
             : _pin[index] == 1
-                ? Colors.purple
+                ? Color.fromARGB(255, 111, 7, 208)
                 : _pin[index] == 2
-                    ? Colors.purple
+                    ? Color.fromARGB(255, 111, 7, 208)
                     : _pin[index] == 3
-                        ? Colors.purple
-                        : Colors.purple,
+                        ? Color.fromARGB(255, 111, 7, 208)
+                        : Color.fromARGB(255, 111, 7, 208),
         shape: BoxShape.circle,
       ),
     );
   }
-// void clearPin(int index){
-// if (_pin[index] == 0){
 
-// }}
   Widget _buildNumberButton(int number) {
-    return GestureDetector(
-      child: Container(
-        // color:Colors.transparent,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.transparent,
-        ),
-        child: Text("$number", style: TextStyle(color: Colors.grey)),
-      ),
-      onTap: () => _onNumberPressed(number),
+    return TextButton(
+      child:
+          Text("$number", style: TextStyle(color: Colors.grey, fontSize: 18)),
+      onPressed: () => _onNumberPressed(number),
     );
+    onPressed:
+    () => _onNumberPressed(number);
   }
 
   Widget _buildSubmitButton() {
@@ -200,7 +194,7 @@ class FinggerPrint extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40,
+      height: 60,
       width: 250,
       child: ElevatedButton(
         onPressed: () {
@@ -208,7 +202,7 @@ class FinggerPrint extends StatelessWidget {
             content: Text(
                 'FingerPrint Authentication is Currently Not Available',
                 textAlign: TextAlign.center),
-            backgroundColor: Color.fromARGB(255, 207, 69, 196),
+            backgroundColor: Color.fromARGB(255, 111, 7, 208),
             elevation: 15,
             behavior: SnackBarBehavior.floating,
             margin: EdgeInsets.all(5),
@@ -220,8 +214,8 @@ class FinggerPrint extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
         ),
         style: ElevatedButton.styleFrom(
-          primary: Colors.purple,
-          elevation: 7,
+          primary: Color.fromARGB(255, 111, 7, 208),
+          elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),

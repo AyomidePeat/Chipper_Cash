@@ -15,7 +15,7 @@ class _CardScreenState extends State<CardScreen> {
       aspectRatio:3/2,
       child: SafeArea(
         child: Scaffold(
-           // appBar: AppBar(backgroundColor: Colors.purple),
+           // appBar: AppBar(backgroundColor: Color.fromARGB(255, 111, 7, 208),),
             body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -42,7 +42,7 @@ class _CardScreenState extends State<CardScreen> {
                       "Built for Your Digital Life",
                       style: TextStyle(
                         fontSize: 25,
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 111, 7, 208),
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign:TextAlign.center,
@@ -53,7 +53,7 @@ class _CardScreenState extends State<CardScreen> {
                         Row(
                           children: const [ Icon(
                               Icons.money_sharp,
-                              color: Colors.purple,
+                              color: Color.fromARGB(255, 111, 7, 208),
                             ), SizedBox(width:10),
                             Text(
                               "5% Cash Back",
@@ -67,14 +67,18 @@ class _CardScreenState extends State<CardScreen> {
                            
                           ],
                         ),
-                        const Text(
-                          "For a limited time, automatically earn 5% back from all qualifying purchases",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                          ),
-                          
+                        Row(
+                          children: [SizedBox(  width:32),
+                            const Text(
+                              "For a limited time, automatically earn 5% back from all qualifying purchases",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                              
+                            ),
+                          ],
                         ),
                       ],
                     ),SizedBox(height:15),
@@ -84,7 +88,7 @@ class _CardScreenState extends State<CardScreen> {
                           children: const [
                             Icon(
                               Icons.web,
-                              color: Colors.purple,
+                              color: Color.fromARGB(255, 111, 7, 208),
                             ),
                             SizedBox(width:10),
                             Text(
@@ -99,14 +103,18 @@ class _CardScreenState extends State<CardScreen> {
                             
                           ],
                         ),
-                        const Text(
-                          "Use your Chipper Card for online purchases anywhere Visa cards are accepted",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        
+                        Row(
+                          children: [SizedBox(  width:32),
+                            const Text(
+                              "Use your Chipper Card for online purchases anywhere Visa cards are accepted",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            
+                            ),
+                          ],
                         ),
                       ],
                     ),SizedBox(height:15),
@@ -116,7 +124,7 @@ class _CardScreenState extends State<CardScreen> {
                           children: const [
        Icon(
                               Icons.phone_iphone,
-                              color: Colors.purple,
+                              color: Color.fromARGB(255, 111, 7, 208),
                             ), SizedBox(width:10,),
                             Text(
                               "Digitally Native",
@@ -130,14 +138,18 @@ class _CardScreenState extends State<CardScreen> {
                            
                           ],
                         ),
-                        const Text(
-                          "A digital card for your digital life",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                          ),
-                         // textAlign: TextAlign.right,
+                        Row(
+                          children: [SizedBox(  width:32),
+                            const Text(
+                              "A digital card for your digital life",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                             // textAlign: TextAlign.right,
+                            ),
+                          ],
                         ),
                       ],
                     ),SizedBox(height:15),
@@ -147,7 +159,7 @@ class _CardScreenState extends State<CardScreen> {
                           children: const [
                                                   Icon(
                               Icons.pie_chart_sharp,
-                              color: Colors.purple,
+                              color: Color.fromARGB(255, 111, 7, 208),
                             ),
                             SizedBox(width:10),
                             Text(
@@ -162,14 +174,18 @@ class _CardScreenState extends State<CardScreen> {
       
                           ],
                         ),
-                        const Text(
-                          "Limit spending by only using the amount uploaded to your card",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                          ),
-                         // textAlign: TextAlign.right,
+                        Row(
+                          children: [SizedBox(  width:32),
+                            const Text(
+                              "Limit spending by only using the amount uploaded to your card",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                             // textAlign: TextAlign.right,
+                            ),
+                          ],
                         ),
                       ],
                     ),SizedBox(height:15),
@@ -179,7 +195,7 @@ class _CardScreenState extends State<CardScreen> {
                           children: const [
                              Icon(
                               Icons.pie_chart_sharp,
-                              color: Colors.purple,
+                              color: Color.fromARGB(255, 111, 7, 208),
                             ),
                             SizedBox(width:10),
                             Text(
@@ -194,14 +210,18 @@ class _CardScreenState extends State<CardScreen> {
                            
                           ],
                         ),
-                        const Text(
-                          "Create digital cards denominated in Naira (NGN), US Dollar(USD), or both",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                          ),
-                         // textAlign: TextAlign.right,
+                        Row(
+                          children: [SizedBox(  width:32),
+                            const Text(
+                              "Create digital cards denominated in Naira (NGN), US Dollar(USD), or both",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                              ),
+                             // textAlign: TextAlign.right,
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -217,8 +237,8 @@ class _CardScreenState extends State<CardScreen> {
                           child: const Text(
                             "Terms and Conditions",
                             style: TextStyle(
-                              color: Colors.purple,
-                              fontWeight: FontWeight.w800,
+                              color: Color.fromARGB(255, 111, 7, 208),
+                              fontWeight: FontWeight.w800
                             ),
                           ),
                         ),
@@ -234,7 +254,7 @@ class _CardScreenState extends State<CardScreen> {
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.purple,
+                                primary: Color.fromARGB(255, 111, 7, 208),
                                 shape: RoundedRectangleBorder(
                                  
                                   borderRadius: BorderRadius.circular(10),

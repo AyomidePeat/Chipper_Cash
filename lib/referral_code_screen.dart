@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ReferralCodeScreen extends StatefulWidget {
   const ReferralCodeScreen({super.key});
 
@@ -13,21 +12,25 @@ class _ReferralCodeScreenState extends State<ReferralCodeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.purple,),
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 111, 7, 208),
+        ),
         body: Center(
           child: Column(
-            children: [SizedBox(height:25),
+            children: [
+              SizedBox(height: 25),
               const Text("Please enter a referral\n code"),
               const SizedBox(height: 20),
-             SizedBox(
-                width: 100, height: 40,
+              SizedBox(
+                width: 100,
+                height: 40,
                 child: const TextField(
                   decoration: InputDecoration(
                     hintStyle: TextStyle(fontSize: 14),
                     hintText: 'Referal Code ',
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 111, 7, 208),
                         width: 0,
                         style: BorderStyle.none,
                       ),
@@ -37,26 +40,25 @@ class _ReferralCodeScreenState extends State<ReferralCodeScreen> {
                 ),
               ),
               SizedBox(height: 20),
-            
-                 SizedBox(height: 50, width: 80,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Enter",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
+              SizedBox(
+                height: 50,
+                width: 80,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Enter",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: "Montserrat",
                     ),
-                    style: ElevatedButton.styleFrom(
-                                primary: Colors.purple,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                   side: BorderSide(width: 0, color: Colors.grey)
-                                   ),
-                              ),
                   ),
-                
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 111, 7, 208),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(width: 0, color: Colors.grey)),
+                  ),
+                ),
               ),
             ],
           ),

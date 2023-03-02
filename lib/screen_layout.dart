@@ -55,7 +55,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                     Tab(
                       child: Icon(
                         Icons.home,
-                        color: currentPage == 0 ? Colors.purple : Colors.grey,
+                        color: currentPage == 0 ? Color.fromARGB(255, 111, 7, 208) : Colors.grey,
                       ),
                     ),
                     Tab(
