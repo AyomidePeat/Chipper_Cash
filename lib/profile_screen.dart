@@ -51,7 +51,7 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                 ),
               ),
               const SizedBox(
-                height: 7,
+                height: 8,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
