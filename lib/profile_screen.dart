@@ -16,6 +16,7 @@ class _Profile_ScreenState extends State<Profile_Screen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Color.fromARGB(255, 111, 7, 208),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
